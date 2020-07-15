@@ -49,7 +49,8 @@ class MarkovMachine {
         sentence += wordVal + ' '
       }
     }
-    console.log(sentence)
+    return sentence
+    // console.log(sentence)
   }
   getValues(index,value, array) {
     let values = []
@@ -69,17 +70,6 @@ class MarkovMachine {
 
 }
 
-args = process.argv
-console.log(args)
-const file = require('fs')
-file.readFile(args[2], 'utf8', (err, data) => {
-  if (err) {
-    console.log(err)
-  }
-  else {
-    const m = new MarkovMachine(data)
-    m.makeText()
-  }
-})
-module.exports = MarkovMachine
+
+module.exports ={ MarkovMachine}
 
